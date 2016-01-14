@@ -1,5 +1,5 @@
 # node-tunnel - HTTP/HTTPS Agents for tunneling proxies
-
+[![Build Status](https://travis-ci.org/Tjatse/node-tunnel.svg)](https://travis-ci.org/Tjatse/node-tunnel) [![NPM version](https://badge.fury.io/js/node-tunnel.svg)](http://badge.fury.io/js/node-tunnel)
 ## Example
 
 ```javascript
