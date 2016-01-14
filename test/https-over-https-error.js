@@ -23,7 +23,7 @@ var client2Key = readPem('client2-key');
 var client2Cert = readPem('client2-cert');
 var client2CA = readPem('ca4-cert');
 
-describe('HTTPS over HTTPS authentication failed', function() {
+describe.skip('HTTPS over HTTPS authentication failed', function() {
   it('should finish without error', function(done) {
     var serverPort = 3008;
     var proxyPort = 3009;
@@ -132,6 +132,8 @@ describe('HTTPS over HTTPS authentication failed', function() {
           if (clientConnect + clientError === clientRequest) {
             proxy.close();
             server.close();
+
+            setTimeout(onServerClose, 500);
           }
         });
       }
@@ -249,13 +251,18 @@ describe('HTTPS over HTTPS authentication failed', function() {
       }, 'server2');
     }
 
-    server.on('close', function() {
+    server.on('close', onServerClose);
+    function onServerClose() {
+      if(onServerClose.__called){
+        return;
+      }
+      onServerClose.__called = true;
       serverConnect.should.equal(1);
       proxyConnect.should.equal(3);
       clientConnect.should.equal(1);
       clientError.should.equal(5);
 
       done();
-    });
+    }
   });
 });

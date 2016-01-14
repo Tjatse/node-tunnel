@@ -125,13 +125,19 @@ describe('HTTPS over HTTPS', function() {
             if (clientConnect === N) {
               proxy.close();
               server.close();
+              setTimeout(onServerClose, 500);
             }
           });
         });
       }
     }
 
-    server.on('close', function() {
+    server.on('close', onServerClose);
+    function onServerClose() {
+      if(onServerClose.__called){
+        return;
+      }
+      onServerClose.__called = true;
       serverConnect.should.equal(N);
       proxyConnect.should.equal(poolSize);
       clientConnect.should.equal(N);
@@ -141,6 +147,6 @@ describe('HTTPS over HTTPS', function() {
       agent.requests.should.be.empty;
   
       done();
-    });
+    }
   });
 });

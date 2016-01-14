@@ -3,7 +3,7 @@
 ## Example
 
 ```javascript
-var tunnel = require('tunnel');
+var tunnel = require('tunnel2');
 
 var tunnelingAgent = tunnel.httpsOverHttp({
   proxy: {
@@ -21,7 +21,7 @@ var req = https.request({
 
 ## Installation
 
-    $ npm install tunnel
+    $ npm install tunnel2
 
 ## Usages
 

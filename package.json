@@ -1,6 +1,6 @@
 {
-  "name": "tunnel",
-  "version": "0.0.4-pre",
+  "name": "tunnel2",
+  "version": "0.0.4",
   "description": "Node HTTP/HTTPS Agents for tunneling proxies",
   "keywords": [
     "http",
@@ -8,7 +8,7 @@
     "agent",
     "proxy"
   ],
-  "homepage": "https://github.com/koichik/node-tunnel/",
+  "homepage": "https://github.com/Tjatse/node-tunnel.git",
   "author": "Koichi Kobayashi <koichik@improvement.jp>",
   "main": "./index.js",
   "licenses": {
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/koichik/node-tunnel"
+    "url": "https://github.com/Tjatse/node-tunnel.git"
   },
   "engines": {
     "node": ">=0.6.11 <=0.7.0 || >=0.7.3"
@@ -27,6 +27,6 @@
     "should": "*"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "mocha -R spec"
   }
 }

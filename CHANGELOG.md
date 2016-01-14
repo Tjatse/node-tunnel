@@ -1,4 +1,7 @@
 # Changelog
+ - 0.0.4 (2016/01/14)
+  - supports v0.11.3+
+  - fixed placeholder conflict
 
  - 0.0.3 (2014/01/20)
    - fixed package.json
